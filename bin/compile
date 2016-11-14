@@ -16,14 +16,19 @@ purgeCache() {
   echo "$result"
 }
 
-echo "-----> Purging Cloudflare cache"
-
-result=$(purgeCache)
-
-if [ $result -ne "200" ]; then
-  echo "       Failed: ${result}"
+if [ -z ${CF_AUTH_KEY+x} ]; then
+  echo "-----> Not purging Cloudflare cache"
+  echo "       Set CF_ZONE_ID, CF_AUTH_KEY & CF_EMAIL"
 else
-  echo "       Success: ${result}"
+  echo "-----> Purging Cloudflare cache"
+
+  result=$(purgeCache)
+
+  if [ $result -ne "200" ]; then
+    echo "       Failed: ${result}"
+  else
+    echo "       Success: ${result}"
+  fi
 fi
 
 # Always exit zero to ensure downstream buildpacks run

@@ -1,7 +1,3 @@
 #!/bin/sh
 
-cat << EOF
----
-config_vars:
-  CF_CACHE_PURGED: true
-EOF
+echo "--- {}"
