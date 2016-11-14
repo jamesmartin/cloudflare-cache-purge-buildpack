@@ -9,8 +9,9 @@
 if [ -z ${CF_AUTH_KEY+x} ]; then
   echo "-----> Not purging Cloudflare cache"
   echo "       Set CF_ZONE_ID, CF_AUTH_KEY & CF_EMAIL"
-  exit 1
 else
   echo "-----> Detected purgeable Cloudflare cache credentials"
-  exit 0
 fi
+
+# Always exit zero to ensure downstream buildpacks run
+exit 0
