@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -z ${CF_AUTH_KEY+x} ]; then
-  echo "-----> No purgeable cache credentials"
+  echo "       No purgeable cache credentials"
 else
-  echo "-----> Detected purgeable Cloudflare cache credentials"
+  echo "       Detected purgeable Cloudflare cache credentials"
 fi
