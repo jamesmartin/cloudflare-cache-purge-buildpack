@@ -1,4 +1,7 @@
 #!/bin/sh
 
-# Always exit zero to ensure downstream buildpacks run
-exit 0
+if [ -z ${CF_AUTH_KEY+x} ]; then
+  echo "-----> No purgeable cache credentials"
+else
+  echo "-----> Detected purgeable Cloudflare cache credentials"
+fi
