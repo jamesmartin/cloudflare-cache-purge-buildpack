@@ -32,12 +32,12 @@ git push heroku master
 The Cloudflare Zone ID for your site can be obtained via the API:
 
 1. Clone this repository locally
-1. Edit the [cf](./cf) file to include your Cloudflare API key and email address
+1. Edit the [cf](./cf.example) file to include your Cloudflare API key and email address
 1. Run the `zones` command:
   ```
     $ ./cf bin/zones
   ```
-Find the Zone ID of your site in the JSON output of `zones`. E.g:
+1. Find the Zone ID of your site in the JSON output of `zones`. E.g:
 
 ```json
 {
