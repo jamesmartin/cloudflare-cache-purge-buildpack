@@ -5,7 +5,7 @@ Purges your Heroku application's Cloudflare cache on deployment.
 This buildpack makes use of Heroku's built-in [multi
 buildpack](https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app)
 functionality to make a HTTP DELETE request to the [Cloudflare purge all files
-API](clou://api.cloudflare.com/#zone-purge-all-files). Each time you deploy
+API](https://api.cloudflare.com/#zone-purge-all-files). Each time you deploy
 your Heroku app, the cache will be cleared.
 
 
