@@ -2,12 +2,21 @@
 
 Purges your Heroku application's Cloudflare cache on deployment.
 
+This buildpack makes use of Heroku's built-in [multi
+buildpack](https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app)
+functionality to make a HTTP DELETE request to the [Cloudflare purge all files
+API](clou://api.cloudflare.com/#zone-purge-all-files). Each time you deploy
+your Heroku app, the cache will be cleared.
+
+
 ## Configuration
 
 You will need:
 
 1. Your [Cloudflare API key and email address](https://api.cloudflare.com)
 1. The [Zone ID](#zone-id) of the site that Cloudflare is caching
+
+Run the following against your Heroku application:
 
 ```
 heroku config:set CF_EMAIL=email@example.com
@@ -17,12 +26,6 @@ heroku config:set CF_AUTH_KEY=my_cloudflare_api_key
 heroku buildpacks:add https://github.com/jamesmartin/cloudflare-cache-purge-buildpack.git
 git push heroku master
 ```
-
-This buildpack makes use of Heroku's built-in [multi
-buildpack](https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app)
-functionality to make a HTTP DELETE request to the [Cloudflare purge all files
-API](clou://api.cloudflare.com/#zone-purge-all-files). Each time you deploy
-your Heroku app, the cache will be cleared.
 
 <a name="zone-id"></a>
 ## Getting your Zone ID
