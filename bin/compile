@@ -9,7 +9,7 @@
 
 # Export the environment variables from their on-disk location
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-./${DIR}/bin/export_env_dir
+./${DIR}/export_env_dir
 
 purgeCache() {
   local result=$(curl -L --write-out %{http_code} --silent --output /dev/null \
