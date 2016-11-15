@@ -24,7 +24,8 @@ functionality to make a HTTP DELETE request to the [Cloudflare purge all files
 API](clou://api.cloudflare.com/#zone-purge-all-files). Each time you deploy
 your Heroku app, the cache will be cleared.
 
-<a name="zone-id"></a>## Getting your Zone ID
+<a name="zone-id"></a>
+## Getting your Zone ID
 
 The Cloudflare Zone ID for your site can be obtained via the API:
 
