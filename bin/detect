@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Export the environment variables from their on-disk location
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$(dirname $0)"
 ${DIR}/export_env_dir
 
 if [ -z ${CF_AUTH_KEY+x} ]; then
