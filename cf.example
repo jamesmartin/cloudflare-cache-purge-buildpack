@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Sets environment vars and runs the given command
+# Useful for testing locally
+# Copy this file to cf, and update the variables with your Cloudflare details
+#
+# $> ./cf bin/compile
+
+CF_AUTH_KEY=my_key; export CF_AUTH_KEY
+CF_EMAIL=email@example.com; export CF_EMAIL
+CF_ZONE_ID=my_zone_id; export CF_ZONE_ID
+
+$1
