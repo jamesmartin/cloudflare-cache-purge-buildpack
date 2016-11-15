@@ -14,7 +14,7 @@ CACHE_DIR=$2
 ENV_DIR=$3
 ${DIR}/export_env_dir $ENV_DIR
 
-if [ -f  ${ENV_DIR}/env_exports ]; then
+if [ -e ${ENV_DIR}/env_exports ]; then
   source ${ENV_DIR}/env_exports
 fi
 
