@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Export the environment variables from their on-disk location
-BUILD_DIR=$1
-./${BUILD_DIR}/export_env_dir
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+./${DIR}/bin/export_env_dir
 
 if [ -z ${CF_AUTH_KEY+x} ]; then
   echo "       No purgeable cache credentials"
