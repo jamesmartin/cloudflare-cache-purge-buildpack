@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Lists all Cloudflare zones.
+# For convenience only. Not part of a standard Heroku buildpack.
+
 getZones() {
   local result=$(curl -L --silent \
     -X GET "https://api.cloudflare.com/client/v4/zones" \
