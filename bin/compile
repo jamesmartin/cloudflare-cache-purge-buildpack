@@ -6,6 +6,11 @@
 # CF_EMAIL
 # API used: https://api.cloudflare.com/#zone-purge-all-files
 
+
+# Export the environment variables from their on-disk location
+BUILD_DIR=$1
+./${BUILD_DIR}/export_env_dir
+
 purgeCache() {
   local result=$(curl -L --write-out %{http_code} --silent --output /dev/null \
     -X DELETE "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
