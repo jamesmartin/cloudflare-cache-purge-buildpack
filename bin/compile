@@ -15,7 +15,7 @@ ENV_DIR=$3
 ${DIR}/export_env_dir $ENV_DIR
 
 if [ -e ${ENV_DIR}/env_exports ]; then
-  source ${ENV_DIR}/env_exports
+  . ${ENV_DIR}/env_exports
 fi
 
 purgeCache() {
