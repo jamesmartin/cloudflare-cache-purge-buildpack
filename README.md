@@ -14,7 +14,7 @@ your Heroku app, the cache will be cleared.
 You will need:
 
 1. Your [Cloudflare API key and email address](https://api.cloudflare.com)
-1. The [Zone ID](#zone-id) of the site that Cloudflare is caching
+1. The [Zone ID](#getting-your-zone-id) of the site that Cloudflare is caching
 
 Run the following against your Heroku application:
 
@@ -27,7 +27,6 @@ heroku buildpacks:add https://github.com/jamesmartin/cloudflare-cache-purge-buil
 git push heroku master
 ```
 
-<a name="zone-id"></a>
 ## Getting your Zone ID
 
 The Cloudflare Zone ID for your site can be obtained via the API:
