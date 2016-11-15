@@ -9,7 +9,12 @@
 
 # Export the environment variables from their on-disk location
 DIR="$(dirname $0)"
-${DIR}/export_env_dir
+ENV_DIR=$1
+${DIR}/export_env_dir $ENV_DIR
+
+if [ -f  ${ENV_DIR}/env_exports ]; then
+  source ${ENV_DIR}/env_exports
+fi
 
 purgeCache() {
   local result=$(curl -L --write-out %{http_code} --silent --output /dev/null \
